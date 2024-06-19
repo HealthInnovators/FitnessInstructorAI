@@ -80,6 +80,7 @@ def create_crewai_setup(age, gender, disease):
         task1 = Task(
             description=f"""Analyze the fitness requirements for a {age}-year-old {gender}. 
                             Provide recommendations for exercise routines and fitness strategies.""",
+            expected_output='A refined finalized version of the fitness requirements based on age and gender',
             agent=fitness_expert,
             llm=llm
         )
@@ -88,6 +89,7 @@ def create_crewai_setup(age, gender, disease):
             description=f"""Assess nutritional requirements for a {age}-year-old {gender}. 
                         Provide dietary recommendations based on specific nutritional needs.
                         Do not prescribe a medicine""",
+          expected_output='A refined finalized version of the nutritional requirements based on age and gender',
             agent=nutritionist,
             llm=llm
         )
@@ -95,6 +97,7 @@ def create_crewai_setup(age, gender, disease):
         task3 = Task(
             description=f"""Evaluate overall health considerations for a {age}-year-old {gender}. 
                         Provide recommendations for a healthy lifestyle.""",
+          expected_output='A refined finalized version of the health considerations based on age and gender',
             agent=doctor,
             llm=llm
         )
